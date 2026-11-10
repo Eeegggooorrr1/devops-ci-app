@@ -67,7 +67,6 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
 
-    # Р ВР СњР В¦Р ВР вЂќР вЂўР СњР Сћ 1: Р С—Р С•Р С”Р В° Р С•РЎвЂљРЎРѓРЎС“РЎвЂљРЎРѓРЎвЂљР Р†РЎС“Р ВµРЎвЂљ packages: write.
     permissions:
       contents: read
       packages: write
