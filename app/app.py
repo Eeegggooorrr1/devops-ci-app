@@ -1,20 +1,20 @@
-"""HTTP-РїСЂРёР»РѕР¶РµРЅРёРµ РґР»СЏ РїСЂРѕРІРµСЂРєРё CI-РєРѕРЅРІРµР№РµСЂР°."""
+"""Flask application for the CI pipeline."""
 
 from flask import Flask, jsonify
 
 
 def create_app():
-    """РЎРѕР·РґР°С‘С‚ Рё РЅР°СЃС‚СЂР°РёРІР°РµС‚ СЌРєР·РµРјРїР»СЏСЂ РїСЂРёР»РѕР¶РµРЅРёСЏ."""
+    """Create and configure the Flask application."""
     application = Flask(__name__)
 
     @application.get("/health")
     def health():
-        """Р’РѕР·РІСЂР°С‰Р°РµС‚ СЂРµР·СѓР»СЊС‚Р°С‚ РїСЂРѕРІРµСЂРєРё Р¶РёР·РЅРµСЃРїРѕСЃРѕР±РЅРѕСЃС‚Рё."""
+        """Return the application health status."""
         return jsonify(status="unhealthy")
 
     @application.get("/")
     def index():
-        """Р’РѕР·РІСЂР°С‰Р°РµС‚ СЃРІРµРґРµРЅРёСЏ Рѕ СЃР»СѓР¶Р±Рµ."""
+        """Return service information."""
         return jsonify(
             service="devops-ci-app",
             version="1.0.0",
